@@ -9,7 +9,7 @@ public class Question {
     private String questionTitle;
     private Category category;
     private List<Answer> answerList;
-    private int correctAnswer;
+    private String correctAnswer;
 
 
     public Question(String questionTitle) {
@@ -36,14 +36,13 @@ public class Question {
         this.category = category;
     }
 
-    public int getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setCorrectAnswer(int correctAnswer) {
+    public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
-    public boolean validateWrongAnswer(int idAnswer){
-        return this.correctAnswer != idAnswer;
+
+    public boolean validateWrongAnswer(String idAnswer){
+        return !this.correctAnswer.equals(idAnswer);
     }
+
+
 }

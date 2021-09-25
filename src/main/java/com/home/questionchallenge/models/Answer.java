@@ -11,9 +11,7 @@ public class Answer {
         this.title = title;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public String getTitle() {
         return title;

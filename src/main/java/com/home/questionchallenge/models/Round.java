@@ -1,7 +1,9 @@
 package com.home.questionchallenge.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Round {
 
@@ -15,15 +17,11 @@ public class Round {
         this.questionList = questionList;
     }
 
-    public int getRoundNumber() {
-        return roundNumber;
-    }
-
     public int getRoundScore() {
         return roundScore;
     }
 
-    public List<Question> getQuestionRound() {
+    public Question getQuestionRound() {
 
         List<Question> questionRound = new ArrayList<>();
         for (Question question : questionList) {
@@ -31,7 +29,8 @@ public class Round {
                 questionRound.add(question);
             }
         }
-        return questionRound;
+        Random random = new Random();
+        return questionRound.get(random.nextInt(5));
     }
 
 

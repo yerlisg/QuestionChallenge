@@ -16,17 +16,11 @@ public class Session {
         this.maximumScore = maximumScore;
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
     public List<Round> getRoundList() {
         return roundList;
     }
 
-    public void setRoundList(List<Round> roundList) {
-        this.roundList = roundList;
-    }
+    public Player getPlayer() { return player; }
 
     public int getMaximumScore() {
         return maximumScore;
