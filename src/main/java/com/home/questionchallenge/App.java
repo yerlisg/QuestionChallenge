@@ -14,10 +14,10 @@ public class App {
         String response;
 
         System.out.println("************     BIENVENIDO     ************");
-        System.out.println("************ JUEGO DE PREGUNTAS ************");
+        System.out.println("************ JUEGO DE PREGUNTAS ************\n");
 
        do {
-           System.out.println("\nElija una opción: \n ");
+           System.out.println("Elija una opción: \n ");
            System.out.println("1. Jugar");
            System.out.println("2. Ver Lista de puntajes");
            System.out.println("3. Salir");
@@ -32,10 +32,10 @@ public class App {
                    ScoreList.showScoreList();
                    break;
                case "3":
-                   System.out.println("\nGracias por su visita");
+                   System.out.println("Gracias por su visita");
                    break;
                default:
-                   System.out.println("\nPor favor seleccione una opción válida");
+                   System.out.println("Por favor seleccione una opción válida\n");
            }
        } while (!response.equals("3"));
 

@@ -29,9 +29,7 @@ public final class QuestionReading {
                 question.setAnswerList(answerList);
 
                 questionList.add(question);
-
             }
-
         } catch (ArrayIndexOutOfBoundsException e){
             System.err.println("Ha ocurrido un error en la obtención de las preguntas para el juego: " + e.getMessage() + ". Disculpe las molestias causadas.");
             System.exit(1);

@@ -1,6 +1,7 @@
 package com.home.questionchallenge.ui;
 
 import com.home.questionchallenge.models.*;
+import com.home.questionchallenge.services.UserServices;
 import com.home.questionchallenge.utils.GameSetup;
 
 import java.util.Arrays;
@@ -15,38 +16,36 @@ public final class Game {
 
     public static void play(){
 
-        System.out.println("\nIngrese su nombre para iniciar el juego: ");
+        System.out.println("Ingrese su nombre para iniciar el juego: \n");
         String playerName = sc.nextLine();
         Player player = new Player(playerName);
 
-        System.out.println("\n¡Que empiecen los Septuagésimo Cuartos Juegos del Hambre y que la suerte esté siempre de tú parte  " + playerName + "!");
+        System.out.println("¡Que empiecen los Septuagésimo Cuartos Juegos del Hambre y que la suerte esté siempre de tu parte  " + playerName + "!\n");
 
         Session session = GameSetup.setUp(player);
 
         for (Round round : session.getRoundList()){
-            Question question = round.getQuestionRound();
+            Question question = round.getRoundQuestion();
             String choice = validateQuestion(question);
 
             if(choice.equals("0")){
-                System.out.println("\nHas decidido retirarte. Bien jugado " + playerName + "." + "Tu puntaje final es: " + player.getScore());
+                System.out.println("Has decidido retirarte. Bien jugado " + playerName + "." + "Tu puntaje final es: " + player.getScore()+ "\n");
                 break;
             }
-
             if (question.validateWrongAnswer(choice)){
                 player.setScore(0);
-                System.out.println("\nLo siento " + playerName + " , has fallado y lo has perdido todo . Nos vemos pronto.");
+                System.out.println("Lo siento " + playerName + " , has fallado y lo has perdido todo . Nos vemos pronto.\n");
                 break;
             }
-
-            System.out.println("\nExcelente " + playerName + " Tu respuesta es correcta, continua jugando así.");
-
             player.setScore(player.getScore() + round.getRoundScore());
+            System.out.println("Excelente " + playerName + " Tu respuesta es correcta, continua jugando así. Tu puntaje acumulado es de: "+player.getScore() +"\n");
         }
 
         if (player.getScore() == session.getMaximumScore()){
-            System.out.println("\nWOW, eres sorprendente, " + playerName + " ¡has ganado! Tu puntaje final es: " + player.getScore() );
+            System.out.println("WOW, eres sorprendente, " + playerName + " ¡has ganado! Tu puntaje final es: " + player.getScore() + "\n" );
         }
 
+        UserServices.savePlayerScore(player);
     }
 
     private static String validateQuestion(Question question) {
@@ -56,23 +55,23 @@ public final class Game {
         boolean validChoice;
 
         do {
-            System.out.println("\nPREGUNTA: " + question.getQuestionTitle());
-            System.out.println("\nElija una opción entre las siguientes respuestas: ");
+            System.out.println("PREGUNTA: " + question.getQuestionTitle()+ "\n");
+            System.out.println("Elija una opción entre las siguientes respuestas:\n ");
             for (Answer answer : question.getAnswerList()) {
                 System.out.println(answer.getId() + ": " + answer.getTitle());
             }
-            System.out.println("\nSi desea retirarse del juego por favor ingrese 0");
+            System.out.println("Si desea retirarse del juego por favor ingrese 0 \n");
+
             choice = sc.nextLine();
             validChoice = possibleChoices.contains(choice);
 
             if (validChoice) {
                 return choice;
-            } else {
-                System.out.println("\nADVERTENCIA: Por favor, ingrese una opción válida: ");
             }
+            System.out.println("ADVERTENCIA: Por favor, ingrese una opción válida:\n ");
+
         } while (!validChoice);
         return "PENDIENTE POR SELECCIÓN";
     }
-
 
 }

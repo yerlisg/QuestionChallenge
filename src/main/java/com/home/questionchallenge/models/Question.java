@@ -13,8 +13,10 @@ public class Question {
 
 
     public Question(String questionTitle) {
+
         this.questionTitle = questionTitle;
     }
+
 
     public String getQuestionTitle() {
         return questionTitle;
@@ -40,7 +42,9 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
+
     public boolean validateWrongAnswer(String idAnswer){
+
         return !this.correctAnswer.equals(idAnswer);
     }
 
