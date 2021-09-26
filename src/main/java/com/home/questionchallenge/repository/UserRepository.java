@@ -53,6 +53,4 @@ public class UserRepository {
         player.setGameDate(LocalDateTime.parse(rs.getString("game_date")));
         return player;
     }
-
-
 }

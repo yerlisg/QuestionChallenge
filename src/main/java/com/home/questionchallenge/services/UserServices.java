@@ -12,7 +12,6 @@ public class UserServices {
     public static List<Player> listPlayerScores(){return UserRepository.list();}
 
     public static void savePlayerScore(Player player){ UserRepository.save(player);}
-    
 
 }
 

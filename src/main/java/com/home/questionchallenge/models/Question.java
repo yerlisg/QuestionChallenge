@@ -5,18 +5,15 @@ import java.util.List;
 
 public class Question {
 
-
     private String questionTitle;
     private Category category;
     private List<Answer> answerList;
     private String correctAnswer;
 
-
     public Question(String questionTitle) {
 
         this.questionTitle = questionTitle;
     }
-
 
     public String getQuestionTitle() {
         return questionTitle;
@@ -42,11 +39,8 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-
     public boolean validateWrongAnswer(String idAnswer){
 
         return !this.correctAnswer.equals(idAnswer);
     }
-
-
 }

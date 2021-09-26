@@ -38,6 +38,5 @@ public class App {
                    System.out.println("Por favor seleccione una opción válida\n");
            }
        } while (!response.equals("3"));
-
     }
 }

@@ -16,11 +16,11 @@ public final class Game {
 
     public static void play(){
 
-        System.out.println("Ingrese su nombre para iniciar el juego: \n");
+        System.out.println("Ingrese su nombre para iniciar el juego:");
         String playerName = sc.nextLine();
         Player player = new Player(playerName);
 
-        System.out.println("¡Que empiecen los Septuagésimo Cuartos Juegos del Hambre y que la suerte esté siempre de tu parte  " + playerName + "!\n");
+        System.out.println("¡Que empiecen los Septuagésimo Cuartos Juegos del Hambre y que la suerte esté siempre de tu parte " + playerName + "!\n");
 
         Session session = GameSetup.setUp(player);
 
@@ -29,20 +29,20 @@ public final class Game {
             String choice = validateQuestion(question);
 
             if(choice.equals("0")){
-                System.out.println("Has decidido retirarte. Bien jugado " + playerName + "." + "Tu puntaje final es: " + player.getScore()+ "\n");
+                System.out.println("Has decidido retirarte. Bien jugado " + playerName + ". Tu puntaje final es: " + player.getScore()+ "\n");
                 break;
             }
             if (question.validateWrongAnswer(choice)){
                 player.setScore(0);
-                System.out.println("Lo siento " + playerName + " , has fallado y lo has perdido todo . Nos vemos pronto.\n");
+                System.out.println("Lo siento " + playerName + ", has fallado y lo has perdido todo. Nos vemos pronto.\n");
                 break;
             }
             player.setScore(player.getScore() + round.getRoundScore());
-            System.out.println("Excelente " + playerName + " Tu respuesta es correcta, continua jugando así. Tu puntaje acumulado es de: "+player.getScore() +"\n");
+            System.out.println("Excelente " + playerName + ", tu respuesta es correcta, continua jugando así. Tu puntaje acumulado es de: "+player.getScore() +"\n");
         }
 
         if (player.getScore() == session.getMaximumScore()){
-            System.out.println("WOW, eres sorprendente, " + playerName + " ¡has ganado! Tu puntaje final es: " + player.getScore() + "\n" );
+            System.out.println("WOW, eres sorprendente, " + playerName + "¡has ganado! Tu puntaje final es: " + player.getScore() + "\n" );
         }
 
         UserServices.savePlayerScore(player);
@@ -73,5 +73,4 @@ public final class Game {
         } while (!validChoice);
         return "PENDIENTE POR SELECCIÓN";
     }
-
 }

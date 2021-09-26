@@ -8,9 +8,7 @@ public class Player {
     private int score = 0;
     private LocalDateTime gameDate;
 
-    public Player(String name) {
-        this.name = name;
-    }
+    public Player(String name) { this.name = name; }
 
     public String getName() {
         return name;
