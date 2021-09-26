@@ -1,4 +1,4 @@
-##QUESTION CHALLENGE
+## QUESTION CHALLENGE
 
 Consiste en el modelamiento de un concurso de preguntas y respuestas, el cual contiene un banco de 25 preguntas 
 con cuatro opciones para una única respuesta. Cada pregunta se encuentra dentro de una categoría con un nivel de
@@ -8,13 +8,13 @@ se encuentre la pregunta. Si el jugador responde correctamente a cada pregunta d
 contrario responde erradamente a una pregunta en cualquier ronda, pierde. 
 
 
-###Modelado de Clases:
+### Modelado de Clases:
 
 ![Diagrama de Clases](DiagramaDeClasesUML.jpg)
 
 
 
-###Pre-requisitos: 📋
+### Pre-requisitos: 📋
 
 
 1. Tener Java 11 o versión posterior instalada.
@@ -23,20 +23,20 @@ contrario responde erradamente a una pregunta en cualquier ronda, pierde.
 
 
 
-###Pasos para ejecutar el programa: ⚙️
+### Pasos para ejecutar el programa: ⚙️
 
 1. Clonar el proyecto
 2. Importar como proyecto Maven. 
 3. Correr clase principal "App".
 
-###Construido con:  🔧️
+### Construido con:  🔧️
 
 * [Maven](https://maven.apache.org/) - Maven, para gestionar las dependencias.
 * [Java](https://www.oracle.com/java/technologies/downloads/#java11) - Java 11.
 * [SQLiteStudio](https://sqlitestudio.pl/) - SQLiteStudio, para realizar la persistencia de datos. 
 
 
-###Autores: ✒️
+### Autores: ✒️
 * **Yerlis González** - [yerlisg](https://github.com/yerlisg)
 
 
